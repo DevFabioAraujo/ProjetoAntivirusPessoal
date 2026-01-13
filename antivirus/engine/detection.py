@@ -1,7 +1,7 @@
 # engine/detection.py
 
-from core.hasher import calculate_sha256
-from database.signatures import is_malicious_hash
+from antivirus.core.hasher import calculate_sha256
+from antivirus.database.signatures import is_malicious_hash
 
 
 def analyze_file(file_path: str) -> dict:

@@ -1,5 +1,5 @@
-from cli.main import start
-from core.scanner import FileScanner
+from antivirus.cli.main import start
+from antivirus.core.scanner import FileScanner
 
 if __name__ == "__main__":
     start()

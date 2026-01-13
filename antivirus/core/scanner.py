@@ -1,8 +1,10 @@
 # core/scanner.py
 
 import os
-from engine.detection import analyze_file
-from core.logger import get_logger
+from antivirus.engine.detection import analyze_file
+from antivirus.quarantine.quarantine_manager import QuarantineManager
+from antivirus.core.logger import get_logger
+
 
 logger = get_logger()
 
@@ -44,6 +46,7 @@ class FileScanner:
                     "file": file_path,
                     "threat": result["threat"]
                 })
+                self.quarantine.quarantine_file(file_path, result["threat"])
 
         except PermissionError:
             logger.warning(f"Permissão negada: {file_path}")
