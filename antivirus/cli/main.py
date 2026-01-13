@@ -1,7 +1,4 @@
-# cli/main.py
-
 from antivirus.core.scanner import FileScanner
-
 
 def start():
     print("=" * 50)
@@ -10,7 +7,7 @@ def start():
 
     scanner = FileScanner()
 
-    path = input("Informe o caminho do arquivo ou pasta para escanear: ").strip()
+    path = input("\nInforme o caminho do arquivo ou pasta para escanear: ").strip()
 
     print("\nIniciando varredura...\n")
     scanner.scan_path(path)
@@ -26,4 +23,4 @@ def start():
         for item in summary["details"]:
             print(f" - {item['file']} | {item['threat']}")
 
-    print("\nVarredura finalizada.")
+    input("\nPressione ENTER para sair...")
